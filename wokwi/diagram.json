@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "author": "Ana Cisneros, Leslie Sanchez",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_ena",
+      "top": 20,
+      "left": 240,
+      "attrs": {
+        "color": "green",
+        "label": "ENA (PWM)"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_in1",
+      "top": 90,
+      "left": 240,
+      "attrs": {
+        "color": "yellow",
+        "label": "IN1 (derecha)"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_in2",
+      "top": 160,
+      "left": 240,
+      "attrs": {
+        "color": "red",
+        "label": "IN2 (izquierda)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_ena",
+      "top": 70,
+      "left": 150,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_in1",
+      "top": 110,
+      "left": 150,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_in2",
+      "top": 150,
+      "left": 150,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP16",
+      "r_ena:1",
+      "green",
+      []
+    ],
+    [
+      "r_ena:2",
+      "led_ena:A",
+      "green",
+      []
+    ],
+    [
+      "led_ena:C",
+      "pico:GND.8",
+      "black",
+      []
+    ],
+    [
+      "pico:GP17",
+      "r_in1:1",
+      "gold",
+      []
+    ],
+    [
+      "r_in1:2",
+      "led_in1:A",
+      "gold",
+      []
+    ],
+    [
+      "led_in1:C",
+      "pico:GND.8",
+      "black",
+      []
+    ],
+    [
+      "pico:GP18",
+      "r_in2:1",
+      "red",
+      []
+    ],
+    [
+      "r_in2:2",
+      "led_in2:A",
+      "red",
+      []
+    ],
+    [
+      "led_in2:C",
+      "pico:GND.8",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
